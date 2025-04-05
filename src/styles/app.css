@@ -1,0 +1,7 @@
+h1 {
+  text-transform: uppercase;
+}
+
+.shadow-pixel {
+  box-shadow: 4px 4px 0px #713f12;
+}
