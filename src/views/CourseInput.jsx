@@ -1,13 +1,16 @@
 import { useState } from "react";
+import useDataStore from "../stores/useDataStore";
 import CourseImage from "/src/images/courseslist.png";
 
 function CourseInput() {
   const [courseName, setCourseName] = useState("");
   const [addedCourses, setAddedCourses] = useState([]);
+  const addCourse = useDataStore((state) => state.addCourse);
 
   const handleAdd = () => {
     if (!courseName.trim()) return;
     const newCourseId = Math.floor(Math.random() * 1000);
+    addCourse({ id: newCourseId, name: courseName });
     setAddedCourses([...addedCourses, { id: newCourseId, name: courseName }]);
     setCourseName("");
   };
