@@ -11,8 +11,7 @@ const Home = () => {
                       border-8 border-yellow-900 p-8 flex flex-row items-center justify-center 
                       gap-10 min-h-[500px]">
         
-        <div className="relative p-6 border-8 border-yellow-900 bg-yellow-100 flex items-center justify-center 
-                        shadow-[5px_5px_0px_#5A3211,-5px_-5px_0px_#A67B5B,inset_0px_0px_8px_rgba(0,0,0,0.6)]">
+        <div className="relative p-6 border-8 border-yellow-900 bg-yellow-100 flex items-center justify-center shadow-pixel">
           <img
             src={studentImage}
             alt="Student writing"
@@ -20,8 +19,7 @@ const Home = () => {
           />
         </div>
 
-        <div className="relative flex flex-col items-start w-[750px] p-8 border-8 border-yellow-900 bg-yellow-100 
-                        shadow-[5px_5px_0px_#5A3211,-5px_-5px_0px_#A67B5B,inset_0px_0px_8px_rgba(0,0,0,0.6)] -mt-6">
+        <div className="relative flex flex-col items-start w-[750px] p-8 border-8 border-yellow-900 bg-yellow-100 shadow-pixel -mt-7">
           
           <h1 className="text-2xl font-bold font-['Press_Start_2P'] text-yellow-900 tracking-wide mb-7">
             Welcome!!

@@ -16,7 +16,7 @@ function NoteList() {
 
   return (
     <div className="mx-auto w-full max-w-[1200px] bg-yellow-200 text-black shadow-lg border-8 border-yellow-900 p-6">
-      <div className="bg-yellow-100 border-8 border-yellow-900 p-2 mx-auto inline-block bg-clip-padding shadow-[5px_5px_0px_#5A3211,_-5px_-5px_0px_#A67B5B,_inset_0px_0px_8px_rgba(0,0,0,0.6)] [image-rendering:pixelated]">
+      <div className="bg-yellow-100 border-8 border-yellow-900 p-2 mx-auto inline-block bg-clip-padding shadow-pixel [image-rendering:pixelated]">
         <h3 className="text-lg font-bold text-yellow-900 text-center font-['Press_Start_2P'] tracking-wide">
           Notes
         </h3>
@@ -43,11 +43,11 @@ function NoteList() {
             {filteredNotes.map((note) => (
               <div
                 key={note.id}
-                className="relative p-4 border-8 border-yellow-900 rounded-lg bg-yellow-100 w-full break-words shadow-[5px_5px_0px_#5A3211,_-5px_-5px_0px_#A67B5B,_inset_0px_0px_8px_rgba(0,0,0,0.6)]"
+                className="relative p-4 border-8 border-yellow-900 rounded-lg bg-yellow-100 w-full break-words shadow-pixel"
               >
                 <button
                   onClick={() => deleteNote(note.id)}
-                  className="absolute top-1 right-1 w-6 h-6 bg-red-500 text-white border-4 border-yellow-900 rounded-md hover:bg-red-600 flex items-center justify-center text-sm font-['Press_Start_2P'] shadow-[3px_3px_0px_#5A3211,_-3px_-3px_0px_#A67B5B]"
+                  className="absolute top-1 right-2 w-6 h-6 bg-red-500 text-white border-4 border-yellow-900 rounded-md hover:bg-red-600 flex items-center justify-center text-sm font-['Press_Start_2P'] shadow-pixel"
                 >
                   x
                 </button>

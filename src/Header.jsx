@@ -36,32 +36,32 @@ function Header() {
       <nav className="flex flex-wrap justify-center gap-2 mt-4 mr-15">
         <Link
           to="/"
-          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 transition-all shadow-pixel"
+          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 shadow-pixel"
         >
           Home
         </Link>
         <Link
           to="/courses"
-          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 transition-all shadow-pixel"
+          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 shadow-pixel"
         >
           Courses
         </Link>
         <Link
           to="/add-course"
-          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 transition-all shadow-pixel"
+          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 shadow-pixel"
         >
           Add Course
         </Link>
         <Link
           to="/add-note"
           onClick={handleAddNoteClick}
-          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 transition-all shadow-pixel"
+          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 shadow-pixel"
         >
           Add Note
         </Link>
         <Link
           to="/notes"
-          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 transition-all shadow-pixel"
+          className="font-['Press_Start_2P'] text-[10px] bg-yellow-200 text-yellow-900 px-2 py-2 border-4 border-yellow-900 hover:bg-yellow-300 shadow-pixel"
         >
           Notes List
         </Link>
