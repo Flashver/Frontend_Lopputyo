@@ -20,15 +20,21 @@ const coursesOrig = [
 
 const notesOrig = [
   {
-    noteText: "Tänään opit matikkaa",
-    courseid: coursesOrig.find((c) => c.name === "Matikka").id,
-    courseName: "Matikka",
+    id: Math.floor(Math.random() * 10000),
+    text: "Tänään opit matikkaa",
+    course: {
+      id: coursesOrig.find((c) => c.name === "Matikka").id,
+      name: "Matikka",
+    },
     timestamp: Date.now(),
   },
   {
-    noteText: "Tänään opit fysiikkaa",
-    courseid: coursesOrig.find((c) => c.name === "Fysiikka").id,
-    courseName: "Fysiikka",
+    id: Math.floor(Math.random() * 10000),
+    text: "Kvanttimekaniikan alkeet",
+    course: {
+      id: coursesOrig.find((c) => c.name === "Fysiikka").id,
+      name: "Fysiikka",
+    },
     timestamp: Date.now(),
   },
 ];
@@ -47,16 +53,18 @@ const useDataStore = create((set) => ({
 
   addNote: (note) =>
     set((state) => {
-      const course = state.courses.find((c) => c.id === note.courseid);
+      const course = state.courses.find((c) => c.id === note.course);
       return course
         ? {
             notes: [
               ...state.notes,
               {
                 id: Math.floor(Math.random() * 10000),
-                noteText: note.noteText,
-                courseid: course.id,
-                courseName: course.name,
+                text: note.text,
+                course: {
+                  id: course.id,
+                  name: course.name,
+                },
                 timestamp: Date.now(),
               },
             ],
@@ -72,7 +80,7 @@ export const useFetchData = () => {
   const { setCourses, setNotes } = useDataStore();
 
   useSWRImmutable(coursesUrl, fetcher, {
-    onSuccess: (fetchedCourses) => {
+    onSuccess: async (fetchedCourses) => {
       const mergedCourses = [
         ...new Map(
           [...coursesOrig, ...fetchedCourses].map((c) => [c.name, c])
@@ -81,34 +89,25 @@ export const useFetchData = () => {
       setCourses(mergedCourses);
       mutate(coursesUrl, mergedCourses, false);
 
-      mutate(
-        notesUrl,
-        async () => {
-          const notesData = await fetcher(notesUrl);
-          const mergedNotes = [...notesOrig, ...notesData]
-            .map((note) => {
-              const course = mergedCourses.find(
-                (c) => c.id === note.courseid || c.id === note.course?.id
-              );
-              return course
-                ? {
-                    ...note,
-                    noteText: note.text ?? note.noteText,
-                    courseid: course.id,
-                    courseName: course.name,
-                  }
-                : null;
-            })
-            .filter((note) => note !== null);
-          setNotes(mergedNotes);
-          return mergedNotes;
-        },
-        false
-      );
+      const notesData = await fetcher(notesUrl);
+      const mergedNotes = [...notesOrig, ...notesData]
+        .map((note) => {
+          const course = mergedCourses.find(
+            (c) => c.id === note.course?.id
+          );
+
+          return {
+            ...note,
+            course: {
+              id: course.id,
+              name: course.name,
+            },
+          };
+        });
+      setNotes(mergedNotes);
+      mutate(notesUrl, mergedNotes, false);
     },
   });
-
-  return {};
 };
 
 export default useDataStore;

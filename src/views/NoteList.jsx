@@ -11,7 +11,7 @@ function NoteList() {
     selectedCourse === "all"
       ? notes
       : notes.filter(
-          (note) => note.courseid.toString() === selectedCourse
+          (note) => note.course.id.toString() === selectedCourse
         );
 
   return (
@@ -52,10 +52,10 @@ function NoteList() {
                   x
                 </button>
                 <p className="text-xs font-bold font-['Press_Start_2P'] text-yellow-900">
-                  {new Date(note.timestamp).toLocaleString("fi-FI")} <br /> {note.courseName} (ID: {note.courseid})
+                  {new Date(note.timestamp).toLocaleString("fi-FI")} <br /> {note.course.name} (ID: {note.course.id})
                 </p>
                 <p className="mt-2 font-['Press_Start_2P'] text-yellow-900 break-words">
-                  {note.noteText}
+                  {note.text}
                 </p>
               </div>
             ))}

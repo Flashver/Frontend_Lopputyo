@@ -4,23 +4,23 @@ import NoteImage from "../images/addnote.webp";
 
 function NoteInput() {
   const courses = useDataStore((state) => state.courses);
-  const [noteText, setNoteText] = useState("");
+  const [text, setText] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
   const [notes, setNotes] = useState([]);
   const [locked, setLocked] = useState(false);
   const addNote = useDataStore((state) => state.addNote);
 
   const handleAdd = () => {
-    if (!noteText.trim() || !selectedCourse) return;
-    addNote({ noteText, courseid: +selectedCourse });
-    setNotes([...notes, { text: noteText, course: selectedCourse }]);
-    setNoteText("");
+    if (!text.trim() || !selectedCourse) return;
+    addNote({ text, course: +selectedCourse });
+    setNotes([...notes, { text, course: selectedCourse }]);
+    setText("");
     setLocked(true);
   };
 
   const handleEndSession = () => {
     setSelectedCourse("");
-    setNoteText("");
+    setText("");
     setNotes([]);
     setLocked(false);
   };
@@ -68,8 +68,8 @@ function NoteInput() {
           </select>
 
           <textarea
-            value={noteText}
-            onChange={(e) => setNoteText(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             placeholder="Write a note..."
             disabled={!selectedCourse}
             className="w-full p-4 border-4 border-yellow-900 font-pixel text-sm bg-yellow-100 text-yellow-900 hover:bg-yellow-300 transition-all h-[200px] disabled:opacity-50 resize-none break-words"
@@ -78,7 +78,7 @@ function NoteInput() {
           <div className="flex gap-6 mt-4">
             <button
               onClick={handleAdd}
-              disabled={!noteText.trim() || !selectedCourse}
+              disabled={!text.trim() || !selectedCourse}
               className="px-6 py-3 bg-blue-500 text-white border-4 border-yellow-900 font-pixel text-sm hover:bg-blue-600 transition-all disabled:bg-gray-400"
             >
               Add note
