@@ -11,7 +11,7 @@ const Home = () => {
                       border-8 border-yellow-900 p-8 flex flex-row items-center justify-center 
                       gap-10 min-h-[500px]">
         
-        <div className="relative p-6 border-8 border-yellow-900 bg-yellow-100 flex items-center justify-center shadow-pixel">
+        <div className="p-6 border-8 border-yellow-900 bg-yellow-100 flex items-center justify-center shadow-pixel">
           <img
             src={studentImage}
             alt="Student writing"

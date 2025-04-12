@@ -26,38 +26,28 @@ function NoteInput() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="mx-auto w-full max-w-[1200px] bg-yellow-200 text-black shadow-lg border-8 border-yellow-900 p-8 flex flex-row items-center justify-center gap-[40px] min-h-[500px]">
-        <div
-          className="relative p-6 border-8 border-yellow-900 bg-yellow-100 flex items-center justify-center bg-clip-padding shadow-pixel [image-rendering:pixelated]"
-        >
-          <div
-            className="absolute inset-0 -m-2 border-8 border-yellow-900 [background:linear-gradient(45deg,_#8B5A2B,_#A67B5B,_#8B5A2B)] [z-index:-1] shadow-pixel"
-          ></div>
-
+    <div className="flex flex-col items-center font-pixel text-yellow-900">
+      <div className="flex flex-row items-center justify-center gap-10 min-h-[500px] w-full max-w-[1200px] p-8 bg-yellow-200 border-8 border-yellow-900 shadow-lg">
+        
+        <div className="relative p-6 border-8 border-yellow-900 bg-yellow-100 shadow-pixel">
+          <div className="absolute inset-0 -m-2 border-8 border-yellow-900 -z-10 shadow-pixel"></div>
           <img
             src={NoteImage}
-            alt="student wrinting a note"
+            alt="student writing a note"
             className="max-w-[400px] border-4 border-yellow-900 shadow-lg"
           />
         </div>
 
-        <div
-          className="relative flex flex-col items-start w-[750px] p-8 border-8 border-yellow-900 bg-yellow-100 justify-between mt-[-15px] bg-clip-padding shadow-pixel [image-rendering:pixelated]"
-        >
-          <div
-            className="absolute inset-0 -m-2 border-8 border-yellow-900 [background:linear-gradient(45deg,_#8B5A2B,_#A67B5B,_#8B5A2B)] [z-index:-1] shadow-pixel"
-          ></div>
+        <div className="relative flex flex-col items-start justify-between w-[750px] p-8 border-8 border-yellow-900 bg-yellow-100 shadow-pixel -mt-3">
+          <div className="absolute inset-0 -m-2 border-8 border-yellow-900 -z-10 shadow-pixel"></div>
 
-          <h2 className="text-lg font-semibold mb-4 font-pixel text-yellow-900">
-            Add new note
-          </h2>
+          <h2 className="text-lg font-semibold mb-4">Add new note</h2>
 
           <select
             value={selectedCourse}
             onChange={(e) => setSelectedCourse(e.target.value)}
             disabled={locked}
-            className="w-full p-4 border-4 border-yellow-900 font-pixel text-sm bg-yellow-100 text-yellow-900 hover:bg-yellow-300 transition-all disabled:opacity-50"
+            className="w-full p-4 border-4 border-yellow-900 text-sm bg-yellow-100 hover:bg-yellow-300 transition disabled:opacity-50"
           >
             <option value="">-- Choose course --</option>
             {courses.map((course) => (
@@ -72,14 +62,14 @@ function NoteInput() {
             onChange={(e) => setText(e.target.value)}
             placeholder="Write a note..."
             disabled={!selectedCourse}
-            className="w-full p-4 border-4 border-yellow-900 font-pixel text-sm bg-yellow-100 text-yellow-900 hover:bg-yellow-300 transition-all h-[200px] disabled:opacity-50 resize-none break-words"
+            className="w-full h-[200px] p-4 border-4 border-yellow-900 text-sm bg-yellow-100 hover:bg-yellow-300 transition resize-none break-words disabled:opacity-50"
           ></textarea>
 
           <div className="flex gap-6 mt-4">
             <button
               onClick={handleAdd}
               disabled={!text.trim() || !selectedCourse}
-              className="px-6 py-3 bg-blue-500 text-white border-4 border-yellow-900 font-pixel text-sm hover:bg-blue-600 transition-all disabled:bg-gray-400"
+              className="px-6 py-3 bg-blue-500 text-white border-4 border-yellow-900 text-sm hover:bg-blue-600 transition disabled:bg-gray-400"
             >
               Add note
             </button>
@@ -87,7 +77,7 @@ function NoteInput() {
             <button
               onClick={handleEndSession}
               disabled={!locked}
-              className="px-14 py-3 bg-red-500 text-white border-4 border-yellow-900 font-pixel text-sm hover:bg-red-600 transition-all disabled:bg-gray-400"
+              className="px-14 py-3 bg-red-500 text-white border-4 border-yellow-900 text-sm hover:bg-red-600 transition disabled:bg-gray-400"
             >
               Reset
             </button>
@@ -96,21 +86,15 @@ function NoteInput() {
       </div>
 
       {notes.length > 0 && (
-        <div
-          className="mt-8 bg-yellow-100 border-8 border-yellow-900 p-6 w-full max-w-[1200px] flex flex-col relative bg-clip-padding shadow-pixel [image-rendering:pixelated]"
-        >
-          <div
-            className="absolute inset-0 -m-2 border-8 border-yellow-900 [background:linear-gradient(45deg,_#8B5A2B,_#A67B5B,_#8B5A2B)] [z-index:-1] shadow-pixel"
-          ></div>
+        <div className="mt-8 p-6 w-full max-w-[1200px] bg-yellow-100 border-8 border-yellow-900 bg-clip-padding shadow-pixel flex flex-col">
+          <div className="inset-0 -m-2 border-8 border-yellow-900 -z-10 shadow-pixel"></div>
 
-          <h3 className="text-lg font-bold text-yellow-900 text-left font-pixel">
-            Added Notes
-          </h3>
-          <ul className="mt-4 w-full space-y-4">
+          <h3 className="text-lg font-bold">Added Notes</h3>
+          <ul className="mt-4 space-y-4">
             {notes.map((note, index) => (
               <li
                 key={index}
-                className="p-3 bg-yellow-200 border-4 border-yellow-900 font-pixel break-words"
+                className="p-3 bg-yellow-200 border-4 border-yellow-900 break-words"
               >
                 {note.text}
               </li>

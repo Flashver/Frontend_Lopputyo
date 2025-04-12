@@ -16,8 +16,8 @@ function NoteList() {
 
   return (
     <div className="mx-auto w-full max-w-[1200px] bg-yellow-200 text-black shadow-lg border-8 border-yellow-900 p-6">
-      <div className="bg-yellow-100 border-8 border-yellow-900 p-2 mx-auto inline-block bg-clip-padding shadow-pixel [image-rendering:pixelated]">
-        <h3 className="text-lg font-bold text-yellow-900 text-center font-['Press_Start_2P'] tracking-wide">
+      <div className="bg-yellow-100 border-8 border-yellow-900 p-2 mx-auto inline-block shadow-pixel">
+        <h3 className="text-lg font-bold text-yellow-900 text-center font-['Press_Start_2P']">
           Notes
         </h3>
       </div>
@@ -26,7 +26,7 @@ function NoteList() {
         <select
           onChange={(e) => setSelectedCourse(e.target.value)}
           value={selectedCourse}
-          className="w-auto max-w-xs p-2 border-8 border-yellow-900 font-['Press_Start_2P'] text-sm bg-yellow-100 text-yellow-900 hover:bg-yellow-300 transition-all my-4 shadow-lg"
+          className="w-auto max-w-xs p-2 border-8 border-yellow-900 font-['Press_Start_2P'] text-sm bg-yellow-100 text-yellow-900 hover:bg-yellow-300 my-4 shadow-lg"
         >
           <option value="all">All Courses</option>
           {courses.map((course) => (
