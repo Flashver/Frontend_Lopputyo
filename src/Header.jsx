@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <div
-      className="bg-yellow-100 text-yellow-900 py-6 shadow-lg border-b-12 border-yellow-900 flex flex-col items-center w-full relative"
+      className="py-6 border-b-12 border-yellow-900 flex flex-col items-center"
       style={{
         backgroundImage: `url(${headerBackground})`,
         backgroundSize: "100% 100%",
