@@ -7,12 +7,11 @@ function NoteList() {
   const deleteNote = useDataStore((state) => state.deleteNote);
   const [selectedCourse, setSelectedCourse] = useState("all");
 
-  const filteredNotes =
-    selectedCourse === "all"
-      ? notes
-      : notes.filter(
-          (note) => note.course.id.toString() === selectedCourse
-        );
+  const filteredNotes = selectedCourse === "all"
+  ? notes.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+  : notes
+      .filter((note) => note.course.id.toString() === selectedCourse)
+      .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
   return (
     <div className="mx-auto max-w-[1200px] bg-yellow-200 border-8 border-yellow-900 p-6">

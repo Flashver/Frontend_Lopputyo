@@ -7,21 +7,18 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="mx-auto w-full max-w-[1200px] bg-yellow-200 text-black shadow-lg 
-                      border-8 border-yellow-900 p-8 flex flex-row items-center justify-center 
-                      gap-10 min-h-[500px]">
-        
-        <div className="p-6 border-8 border-yellow-900 bg-yellow-100 flex items-center justify-center shadow-pixel">
+      <div
+        className="max-w-[1200px] bg-yellow-200 border-8 border-yellow-900 p-8 flex flex-row items-center justify-center gap-10">
+        <div className="p-6 border-8 border-yellow-900 bg-yellow-100 shadow-pixel">
           <img
             src={studentImage}
             alt="Student writing"
-            className="max-w-[400px] border-4 border-yellow-900 shadow-lg"
+            className="max-w-[400px]"
           />
         </div>
 
-        <div className="relative flex flex-col items-start w-[750px] p-8 border-8 border-yellow-900 bg-yellow-100 shadow-pixel -mt-6">
-          
-          <h1 className="text-2xl font-bold font-['Press_Start_2P'] text-yellow-900 tracking-wide mb-7">
+        <div className="flex flex-col p-8 border-8 border-yellow-900 bg-yellow-100 shadow-pixel -mt-6">
+          <h1 className="text-2xl font-bold font-['Press_Start_2P'] text-yellow-900 mb-7">
             Welcome!!
           </h1>
 
@@ -49,11 +46,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-
-
-
-
