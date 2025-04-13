@@ -32,7 +32,7 @@ function NoteInput() {
         <div className="relative p-6 border-8 border-yellow-900 bg-yellow-100 shadow-pixel">
           <img
             src={NoteImage}
-            alt="student writing a note"
+            alt=""
             className="max-w-[400px] border-4 border-yellow-900 shadow-lg"
           />
         </div>

@@ -8,7 +8,7 @@ ja ohjelmaa ajataksesi kirjoita terminaaliin komento:
 
 npm run dev
 
-Olen tässä käyttänyt tekoälyä muun muuassa visuaaliseen suunnitteluun, koska mielessä oli tietynlainen
+Olen tässä käyttänyt tekoälyä visuaaliseen suunnitteluun, koska mielessä oli tietynlainen
 tyyli jota hain takaa eli stardew valley ja olen kysynyt erinäisiä neuvoja miten tehdä tietty tyyli tailwindillä ja
 värikoodeissa yms pyydetty apua mm. että miten saada jostain tyylistä yksinkertaisempi koodilla.
 
