@@ -14,7 +14,6 @@ värikoodeissa yms pyydetty apua mm. että miten saada jostain tyylistä yksinke
 
 Ja lisäksi olen pyytänyt apua siistimisessä, että koodi näyttää puhtaammalta ja selkeämmältä.
 
-Käytin myös tekoälyä apuna kysyen miten saan swr:n toimimaan siten että saan yhdistettyä haetun datan ja
-kiinteän kovakoodatun datan.
+Käytin myös tekoälyä apuna kysyen miten swr eli datan haku toimii tarkemmin, dokumentaation lisäksi.
 
 Kuvat on luotu on tekoälyllä ja muokattu itse jälkeenpäin joitakin kohtia kuvankäsittely ohjelmalla.
