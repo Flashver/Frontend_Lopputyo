@@ -17,3 +17,6 @@ Ja lisäksi olen pyytänyt apua siistimisessä, että koodi näyttää puhtaamma
 Käytin myös tekoälyä apuna kysyen miten swr eli datan haku toimii tarkemmin, dokumentaation lisäksi.
 
 Kuvat on luotu on tekoälyllä ja muokattu itse jälkeenpäin joitakin kohtia kuvankäsittely ohjelmalla.
+
+Tarkoituksena on myös jatkokehittää tätä siten että se on myös täysin responsiivinen, ja lisätä kaikkea muuta, koska tämä
+tulee olemaan myös portfoliona.
