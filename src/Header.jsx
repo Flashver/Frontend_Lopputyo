@@ -28,8 +28,8 @@ function Header() {
         width: "100%",
       }}
     >
-      <div className="bg-yellow-200 border-4 border-yellow-900 px-5 py-3 shadow-pixel">
-        <h1 className="text-xl font-bold text-yellow-900 text-center font-['Press_Start_2P'] tracking-widest">
+      <div className="bg-yellow-200 border-4 border-yellow-900 px-5 py-3 shadow-pixel mr-20">
+        <h1 className="text-xl font-bold text-yellow-900 font-['Press_Start_2P'] tracking-widest">
           COURSE NOTEAPP
         </h1>
       </div>

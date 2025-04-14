@@ -7,41 +7,7 @@ const notesUrl = "https://luentomuistiinpano-api.netlify.app/.netlify/functions/
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const coursesOrig = [
-  {
-    id: Math.floor(Math.random() * 1000),
-    name: "Matikka",
-  },
-  {
-    id: Math.floor(Math.random() * 1000),
-    name: "Fysiikka",
-  },
-];
-
-const notesOrig = [
-  {
-    id: Math.floor(Math.random() * 10000),
-    text: "Tänään opit matikkaa",
-    course: {
-      id: coursesOrig.find((c) => c.name === "Matikka").id,
-      name: "Matikka",
-    },
-    timestamp: Date.now(),
-  },
-  {
-    id: Math.floor(Math.random() * 10000),
-    text: "Kvanttimekaniikan alkeet",
-    course: {
-      id: coursesOrig.find((c) => c.name === "Fysiikka").id,
-      name: "Fysiikka",
-    },
-    timestamp: Date.now(),
-  },
-];
-
 const useDataStore = create((set) => ({
-  courses: coursesOrig,
-  notes: notesOrig,
 
   setCourses: (courses) => set({ courses }),
   setNotes: (notes) => set({ notes }),
@@ -81,29 +47,22 @@ export const useFetchData = () => {
 
   useSWRImmutable(coursesUrl, fetcher, {
     onSuccess: async (fetchedCourses) => {
-      const mergedCourses = [
-        ...new Map(
-          [...coursesOrig, ...fetchedCourses].map((c) => [c.name, c])
-        ).values(),
-      ];
-      setCourses(mergedCourses);
-      mutate(coursesUrl, mergedCourses, false);
+      setCourses(fetchedCourses);
+      mutate(coursesUrl, fetchedCourses, false);
 
       const notesData = await fetcher(notesUrl);
-      const mergedNotes = [...notesOrig, ...notesData]
-        .map((note) => {
-          const course = mergedCourses.find(
-            (c) => c.id === note.course?.id
-          );
-
-          return {
-            ...note,
-            course: {
-              id: course.id,
-              name: course.name,
-            },
-          };
-        });
+      const mergedNotes = notesData.map((note) => {
+        const course = fetchedCourses.find((c) => c.id === note.course?.id);
+        return {
+          ...note,
+          course: course
+            ? {
+                id: course.id,
+                name: course.name,
+              }
+            : null,
+        };
+      });
       setNotes(mergedNotes);
       mutate(notesUrl, mergedNotes, false);
     },
