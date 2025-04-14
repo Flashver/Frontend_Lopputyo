@@ -9,12 +9,21 @@ function CourseList() {
         <h3 className="text-lg font-bold">All Courses</h3>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mt-4">
-        {courses.map((course) => (
-          <div key={course.id} className="p-4 bg-yellow-100 border-8 border-yellow-900 shadow-pixel">
-            <p className="text-sm">{course.name} (ID: {course.id})</p>
+      <div className="flex flex-col items-start w-full mt-4">
+        {courses.length === 0 ? (
+          <p className="italic">No courses!</p>
+        ) : (
+          <div className="grid grid-cols-2 gap-4 w-full">
+            {courses.map((course) => (
+              <div
+                key={course.id}
+                className="p-4 bg-yellow-100 border-8 border-yellow-900 shadow-pixel"
+              >
+                <p className="text-sm">{course.name} (ID: {course.id})</p>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

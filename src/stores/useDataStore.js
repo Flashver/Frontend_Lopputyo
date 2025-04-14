@@ -8,6 +8,8 @@ const notesUrl = "https://luentomuistiinpano-api.netlify.app/.netlify/functions/
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const useDataStore = create((set) => ({
+  courses: [],
+  notes: [],
 
   setCourses: (courses) => set({ courses }),
   setNotes: (notes) => set({ notes }),
