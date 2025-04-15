@@ -10,7 +10,8 @@ function CourseInput() {
   const handleAdd = () => {
     if (!courseName.trim()) return;
     const id = Math.floor(Math.random() * 1000);
-    const course = { id, name: courseName };
+    const timestamp = Date.now();
+    const course = { id, name: courseName, timestamp };
     addCourse(course);
     setAddedCourses([...addedCourses, course]);
     setCourseName("");
@@ -45,14 +46,16 @@ function CourseInput() {
         <div className="w-full max-w-[1185px] p-6 mt-8 bg-yellow-100 border-8 border-yellow-900">
           <h3 className="text-lg font-bold">Added courses</h3>
           <ul className="mt-4 space-y-4">
-            {addedCourses.map(({ id, name }) => (
-              <li
-                key={id}
-                className="p-3 break-words bg-yellow-200 border-4 border-yellow-900"
-              >
-                Course: '{name}' added by (ID: {id})
-              </li>
-            ))}
+            {addedCourses
+              .sort((a, b) => b.timestamp - a.timestamp)
+              .map(({ id, name }) => (
+                <li
+                  key={id}
+                  className="p-3 break-words bg-yellow-200 border-4 border-yellow-900"
+                >
+                  Course: '{name}' added by (ID: {id})
+                </li>
+              ))}
           </ul>
         </div>
       )}

@@ -81,14 +81,17 @@ function NoteInput() {
         <div className="flex flex-col w-full max-w-[1200px] p-6 mt-8 bg-yellow-100 border-8 border-yellow-900 shadow-pixel">
           <h3 className="text-lg font-bold">Added Notes</h3>
           <ul className="mt-4 space-y-4">
-            {notes.map((note, index) => (
-              <li
-                key={index}
-                className="p-3 break-words bg-yellow-200 border-4 border-yellow-900"
-              >
-                {note.text}
-              </li>
-            ))}
+            {notes
+              .slice()
+              .reverse()
+              .map((note, index) => (
+                <li
+                  key={index}
+                  className="p-3 break-words bg-yellow-200 border-4 border-yellow-900"
+                >
+                  {note.text}
+                </li>
+              ))}
           </ul>
         </div>
       )}
