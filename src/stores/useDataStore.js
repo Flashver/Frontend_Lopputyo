@@ -72,4 +72,3 @@ export const useFetchData = () => {
 };
 
 export default useDataStore;
-

@@ -97,5 +97,3 @@ function NoteInput() {
 }
 
 export default NoteInput;
-
-

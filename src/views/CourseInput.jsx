@@ -46,7 +46,10 @@ function CourseInput() {
           <h3 className="text-lg font-bold">Added courses</h3>
           <ul className="mt-4 space-y-4">
             {addedCourses.map(({ id, name }) => (
-              <li key={id} className="p-3 break-words bg-yellow-200 border-4 border-yellow-900">
+              <li
+                key={id}
+                className="p-3 break-words bg-yellow-200 border-4 border-yellow-900"
+              >
                 Course: '{name}' added by (ID: {id})
               </li>
             ))}
@@ -58,4 +61,3 @@ function CourseInput() {
 }
 
 export default CourseInput;
-

@@ -19,7 +19,9 @@ function CourseList() {
                 key={course.id}
                 className="p-4 bg-yellow-100 border-8 border-yellow-900 shadow-pixel"
               >
-                <p className="text-sm">{course.name} (ID: {course.id})</p>
+                <p className="text-sm">
+                  {course.name} (ID: {course.id})
+                </p>
               </div>
             ))}
           </div>

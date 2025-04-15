@@ -4,7 +4,6 @@ import useDataStore from "./stores/useDataStore";
 import Alert from "./Alert";
 import headerBackground from "/src/images/headeroikea.jpg";
 
-
 function Header() {
   const courses = useDataStore((state) => state.courses);
   const [showAlert, setShowAlert] = useState(false);
@@ -72,9 +71,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
-
-
