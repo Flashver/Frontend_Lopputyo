@@ -9,7 +9,7 @@ function CourseInput() {
 
   const handleAdd = () => {
     if (!courseName.trim()) return;
-    const id = Math.floor(Math.random() * 1000);
+    const id = [...useDataStore.getState().courses, ...addedCourses].reduce((max, c) => (c.id > max ? c.id : max),0) + 1;
     const timestamp = Date.now();
     const course = { id, name: courseName, timestamp };
     addCourse(course);

@@ -27,7 +27,7 @@ const useDataStore = create((set) => ({
             notes: [
               ...state.notes,
               {
-                id: Math.floor(Math.random() * 10000),
+                id: state.notes.reduce((max, n) => Math.max(max, Number(n.id) || 0),0) + 1,
                 text: note.text,
                 course: {
                   id: course.id,
