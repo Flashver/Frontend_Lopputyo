@@ -164,3 +164,19 @@ Projektissa hyödynsin ChatGPT o4 -mallia kehityksen apuna erityisesti seuraavis
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. 
 
 ---
+
+## 💡 Omakohtainen kokemus
+
+Tämä projekti opetti minulle valtavasti uutta Reactista ja miten käyttää eri tyylejä. Aluksi kyllä oli pieniä haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. 
+
+Olen erittäin tyytyväinen projektin lopputulokseen ja mitä oppisin projektin aikana. Ainoastaan gitin laiskat -commitit ja niiden lyhyehköt kuvaukset jäivät vähän harmittamaan.
+
+---
+
+## 🛠️ Korjattaa ei vielä valmis / jatkokehitys
+
+- Kuten selaimen kokoa muuttelemalla huomaa ei näkymä ole ihan täysin responsiivinen ja eikä sitä ole optimoitu mobiilille ollenkaan, koska se ei ollut lopputyön tarkoituksena, siksi se näyttää kamalalta mobiilissa.
+- Optimoida responsiiviseksi mobiilille ja että sitä pystyisi myös käyttämään mobiilissa ja mahdollisesti uusia kokonaan kuvat ja miltä NoteAPP näyttäisi jatkossa.
+- Siistiä koodia enemmän ja mahdollisesti järjestää joitain asioita uusiksi.
+
+---
