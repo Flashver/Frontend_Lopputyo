@@ -169,7 +169,7 @@ Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmist
 
 Tämä projekti opetti minulle valtavasti uutta Reactista ja miten käyttää eri tyylejä. Aluksi kyllä oli pieniä haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. 
 
-Olen erittäin tyytyväinen projektin lopputulokseen ja mitä oppisin projektin aikana. Ainoastaan gitin laiskat -commitit ja niiden lyhyehköt kuvaukset jäivät vähän harmittamaan.
+Olen erittäin tyytyväinen projektin lopputulokseen ja mitä oppisin projektin aikana. Ainoastaan gitin laiskat -commitit ja niiden lyhyehköt kuvaukset jäivät vähän harmittamaan ja se että aloitin committamaan vähän myöhässä.
 
 ---
 
